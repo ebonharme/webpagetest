@@ -188,6 +188,7 @@ CDN_PROVIDER_HEADER cdnHeaderList[] = {
   {"server", "NetDNA", "NetDNA"},
   {"server", "Airee", "Airee"},
   {"X-CDN-Geo", "", "OVH CDN"},
+  {"X-CDN-Pop", "", "OVH CDN"},
   {"X-Px", "", "CDNetworks"},
   {"X-Instart-Request-ID", "instart", "Instart Logic"},
   {"Via", "CloudFront", "Amazon CloudFront"},
@@ -215,7 +216,8 @@ CDN_PROVIDER_HEADER cdnHeaderList[] = {
   {"server", "hiberniacdn", "HiberniaCDN"},
   {"server", "UnicornCDN", "UnicornCDN"},
   {"server", "Optimal CDN", "Optimal CDN"},
-  {"server", "Sucuri/Cloudproxy", "Sucuri/Cloudproxy"},
+  {"server", "Sucuri/Cloudproxy", "Sucuri Firewall"},
+  {"x-sucuri-id", "", "Sucuri Firewall"},
   {"server", "Netlify", "Netlify"},
   {"section-io-id", "", "section.io"}
 };

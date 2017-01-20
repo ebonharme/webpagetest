@@ -172,6 +172,9 @@ bool WebPagetest::GetTest(WptTestDriver& test) {
     return false;
   }
 
+  // Make sure Chrome's auto-updater isn't running
+  WaitForProcessesByName(_T("GoogleUpdate.exe"));
+
   DeleteDirectory(test._directory, false);
 
   // build the url for the request
@@ -1246,7 +1249,7 @@ bool WebPagetest::ProcessFile(CString file, CAtlList<CString> &newFiles) {
     CString featureUsageFile = file.Left(pos) + _T("feature_usage.json.gz");
     CString interactiveFile = file.Left(pos) + _T("interactive.json.gz");
     CString options;
-    options.Format(_T("-t \"%s\" -c \"%s\" -j \"%s\" -u \"%s\" -f \"%s\", -i \"%s\""),
+    options.Format(_T("-t \"%s\" -c \"%s\" -j \"%s\" -u \"%s\" -f \"%s\" -i \"%s\""),
                    (LPCTSTR)file, (LPCTSTR)cpuFile, (LPCTSTR)scriptTimingFile,
                    (LPCTSTR)userTimingFile, (LPCTSTR)featureUsageFile, (LPCTSTR)interactiveFile);
     OutputDebugStringA("Processing trace file");
